@@ -11,6 +11,9 @@ public class Zombie : MonoBehaviour {
     [SerializeField]
     Transform strollCheckLeft, strollCheckRight;
 
+    [SerializeField]
+    GameObject go_food;
+    
     Rigidbody2D rb;
     SpriteRenderer m_renderer;
     int multiplier = -1;
@@ -41,6 +44,7 @@ public class Zombie : MonoBehaviour {
 
     public void Die()
     {
+        Instantiate(go_food, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }

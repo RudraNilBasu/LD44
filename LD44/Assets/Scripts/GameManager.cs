@@ -26,4 +26,9 @@ public class GameManager : MonoBehaviour {
         go_player.transform.position = startPos.position; // TODO: Some more animations and all that
         // TODO: UI: Show that a player died
     }
+
+    public void CollectFood()
+    {
+        print("Food Collected");
+    }
 }

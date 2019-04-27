@@ -7,10 +7,13 @@ public class PlayerManager : MonoBehaviour {
     [SerializeField]
     GameObject GM;
 
+    int foodCollected;
+
     bool lookingRight;
 	// Use this for initialization
 	void Start () {
 		lookingRight = true;
+        foodCollected = 0;
 	}
 	
 	// Update is called once per frame
@@ -38,6 +41,11 @@ public class PlayerManager : MonoBehaviour {
         if (coll.gameObject.tag == "Enemy") {
             GM.SendMessage("DeathSequence", transform);
             // gameObject.SetActive(false);
+        }
+
+        if (coll.gameObject.tag == "Collectable") {
+            Destroy(coll.gameObject);
+            foodCollected++;
         }
     }
 }

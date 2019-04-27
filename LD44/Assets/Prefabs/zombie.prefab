@@ -178,7 +178,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 6
+  m_Constraints: 4
 --- !u!61 &61208777489240830
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -220,6 +220,7 @@ MonoBehaviour:
     m_Bits: 256
   strollCheckLeft: {fileID: 4777049766638532}
   strollCheckRight: {fileID: 4754104701028422}
+  go_food: {fileID: 1422530402313218, guid: b8eb598eecd114efb8b6c601453339ec, type: 2}
 --- !u!212 &212392380435630638
 SpriteRenderer:
   m_ObjectHideFlags: 1

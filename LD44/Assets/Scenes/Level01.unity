@@ -142,7 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go_zombie: {fileID: 1900445225504572, guid: c066e834ce0d844cba114bd8e45f81dc, type: 2}
   go_player: {fileID: 2135055316}
-  startPos: {fileID: 0}
+  startPos: {fileID: 1293913130}
 --- !u!4 &67125516
 Transform:
   m_ObjectHideFlags: 0
@@ -910,6 +910,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61d804d863040419ebdded26c845819b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GM: {fileID: 67125514}
 --- !u!114 &2135055322
 MonoBehaviour:
   m_ObjectHideFlags: 0

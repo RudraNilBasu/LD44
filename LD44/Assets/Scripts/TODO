@@ -6,3 +6,7 @@ rotate player and arrow depending on where he is looking
 player death and all
 camera follow
 bug: arrow: NullPointerException when spawned arrow kills enemy before m_collider is disabled
+Find a way player can be killed
+bug: Probably all zombies will spawn at the exact same spot one on top of the other
+
+[POLISH]: Camera fading and all that
