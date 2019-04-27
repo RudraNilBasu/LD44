@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour {
 
+    [SerializeField]
+    GameObject GM;
+
     bool lookingRight;
 	// Use this for initialization
 	void Start () {
@@ -33,7 +36,8 @@ public class PlayerManager : MonoBehaviour {
     void OnCollisionEnter2D(Collision2D coll)
     {
         if (coll.gameObject.tag == "Enemy") {
-            gameObject.SetActive(false);
+            GM.SendMessage("DeathSequence", transform);
+            // gameObject.SetActive(false);
         }
     }
 }

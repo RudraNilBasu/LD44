@@ -24,7 +24,8 @@ public class Zombie : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		rb.velocity = transform.right * m_Speed * multiplier;
+		// rb.velocity = transform.right * m_Speed * multiplier;
+		rb.velocity = new Vector3(0.0f, rb.velocity.y, 0.0f) + (transform.right * m_Speed * multiplier);
         RaycastHit2D hitLeft = Physics2D.Raycast(strollCheckLeft.position, -Vector2.up, 500, layers);
         RaycastHit2D hitRight = Physics2D.Raycast(strollCheckRight.position, -Vector2.up, 500, layers);
 
