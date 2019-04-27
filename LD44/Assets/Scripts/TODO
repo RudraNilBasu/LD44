@@ -1,3 +1,8 @@
 fix bad movement
 add light around player and light source
 bug: Arrow colliding with player
+animate sprite mask
+rotate player and arrow depending on where he is looking
+player death and all
+camera follow
+bug: arrow: NullPointerException when spawned arrow kills enemy before m_collider is disabled

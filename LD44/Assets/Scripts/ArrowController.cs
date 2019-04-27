@@ -35,6 +35,11 @@ public class ArrowController : MonoBehaviour {
                         ).GetComponent<Arrow>();
                 currentArrow.gameObject.transform.parent = gameObject.transform;
                 isArrowLoaded = true;
+
+                if (transform.localScale.x < 0.0f) {
+                    currentArrow.gameObject.transform.localScale =
+                        Vector3.Scale(currentArrow.gameObject.transform.localScale, new Vector3(-1, 1, 1));
+                }
             }
         }
 	}
