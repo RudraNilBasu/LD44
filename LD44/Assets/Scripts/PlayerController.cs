@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour
 
         motor.MoveBody(speedX);
 #if UNITY_STANDALONE || UNITY_WEBPLAYER
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             motor.jump(jumpSpeed);
         }

@@ -1,12 +1,14 @@
 fix bad movement
-add light around player and light source
-bug: Arrow colliding with player
 animate sprite mask
-rotate player and arrow depending on where he is looking
-player death and all
 camera follow
 bug: arrow: NullPointerException when spawned arrow kills enemy before m_collider is disabled
-Find a way player can be killed
+Find a way player can be killed / add enemies
 bug: Probably all zombies will spawn at the exact same spot one on top of the other
+IDEA: dead zombie's rotation = ! current zombie's rotation
+make space == jump
 
 [POLISH]: Camera fading and all that
+Decide if player can stand and do stuff on arrows or not.
+bug: player death: multiple zombies: Make sure only dies once
+bug: Player on zombie's head bugs
+bug: jumping on zombie's head twice makes me die

@@ -10,9 +10,10 @@ public class GameManager : MonoBehaviour {
     [SerializeField]
 	Transform startPos;
 
+    int totalLives;
     // Use this for initialization
 	void Start () {
-		
+		totalLives = 3;
 	}
 	
 	// Update is called once per frame
@@ -22,9 +23,15 @@ public class GameManager : MonoBehaviour {
 
     public void DeathSequence(Transform currentPlayerPosition)
     {
-        Instantiate(go_zombie, currentPlayerPosition.position, Quaternion.identity);
-        go_player.transform.position = startPos.position; // TODO: Some more animations and all that
-        // TODO: UI: Show that a player died
+        totalLives--;
+        if (totalLives >= 0) {
+            Instantiate(go_zombie, currentPlayerPosition.position, Quaternion.identity);
+            go_player.transform.position = startPos.position; // TODO: Some more animations and all that
+            // TODO: UI: Show that a player died
+        } else {
+            print("Game Over");
+            go_player.SetActive(false);
+        }
     }
 
     public void CollectFood()

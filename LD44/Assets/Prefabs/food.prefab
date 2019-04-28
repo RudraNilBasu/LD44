@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212588184473643238}
   - component: {fileID: 58229775771096106}
   - component: {fileID: 50684966072323124}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: food
   m_TagString: Collectable
   m_Icon: {fileID: 0}

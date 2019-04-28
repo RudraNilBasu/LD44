@@ -56,6 +56,8 @@ public class PlayerMotor : MonoBehaviour
     {
         if (isGrounded)
         {
+            if (rb.bodyType == RigidbodyType2D.Kinematic)
+                rb.bodyType = RigidbodyType2D.Dynamic;
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             //rb.AddForce(new Vector2(0f, jumpForce * 100));
         }
