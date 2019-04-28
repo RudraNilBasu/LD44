@@ -13,3 +13,5 @@ bug: player death: multiple zombies: Make sure only dies once
 bug: Player on zombie's head bugs
 bug: jumping on zombie's head twice makes me die
 Disable player rotate when dead
+bug: reduce arrow alive time to 0.5f or something
+reduce climb ground size by a bit

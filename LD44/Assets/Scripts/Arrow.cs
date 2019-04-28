@@ -56,7 +56,7 @@ public class Arrow : MonoBehaviour {
 
     IEnumerator WaitToDie()
     {
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(0.5f);
         if (!attached)
             Destroy(gameObject);
     }
