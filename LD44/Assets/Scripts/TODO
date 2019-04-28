@@ -12,3 +12,4 @@ Decide if player can stand and do stuff on arrows or not.
 bug: player death: multiple zombies: Make sure only dies once
 bug: Player on zombie's head bugs
 bug: jumping on zombie's head twice makes me die
+Disable player rotate when dead

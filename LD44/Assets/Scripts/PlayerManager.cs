@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(PlayerController))]
-[RequireComponent(typeof(PlayerMotor))]
+// [RequireComponent(typeof(PlayerController))]
+// [RequireComponent(typeof(PlayerMotor))]
 public class PlayerManager : MonoBehaviour {
 
     [SerializeField]
     GameObject GM;
 
-    PlayerController m_controller;
-    PlayerMotor m_motor;
+    // PlayerController m_controller;
+    // PlayerMotor m_motor;
 
     Rigidbody2D rb;
 
@@ -26,30 +26,32 @@ public class PlayerManager : MonoBehaviour {
 
         rb = gameObject.GetComponent<Rigidbody2D>();
 
-        m_controller = GetComponent<PlayerController>();
-        m_motor = GetComponent<PlayerMotor>();
+        // m_controller = GetComponent<PlayerController>();
+        // m_motor = GetComponent<PlayerMotor>();
 
-        m_motor.enabled = true;
-        m_controller.enabled = true;
+        // m_motor.enabled = true;
+        // m_controller.enabled = true;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetAxisRaw("Horizontal") == 1) {
-            // player should look right
-            transform.localScale = new Vector3(
-                    Mathf.Abs(transform.localScale.x),
-                    transform.localScale.y,
-                    transform.localScale.z
-                    );
-        }
-		if (Input.GetAxisRaw("Horizontal") == -1) {
-            // player should look left
-            transform.localScale = new Vector3(
-                    Mathf.Abs(transform.localScale.x) * -1,
-                    transform.localScale.y,
-                    transform.localScale.z
-                    );
+        if (!GameManager.PlayerDead) {
+            if (Input.GetAxisRaw("Horizontal") == 1) {
+                // player should look right
+                transform.localScale = new Vector3(
+                        Mathf.Abs(transform.localScale.x),
+                        transform.localScale.y,
+                        transform.localScale.z
+                        );
+            }
+            if (Input.GetAxisRaw("Horizontal") == -1) {
+                // player should look left
+                transform.localScale = new Vector3(
+                        Mathf.Abs(transform.localScale.x) * -1,
+                        transform.localScale.y,
+                        transform.localScale.z
+                        );
+            }
         }
 	}
 

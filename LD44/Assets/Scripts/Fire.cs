@@ -23,12 +23,10 @@ public class Fire : MonoBehaviour {
 
     IEnumerator PlayAnim()
     {
-        print("Starting..");
         int i = 0;
         while(true) {
             yield return new WaitForSeconds(0.5f);
             i++;
-            print("i = " + i);
             if (i >= 3) {
                 i = 0;
             }
