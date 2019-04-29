@@ -778,6 +778,7 @@ GameObject:
   m_Component:
   - component: {fileID: 67125516}
   - component: {fileID: 67125515}
+  - component: {fileID: 67125517}
   m_Layer: 0
   m_Name: GM
   m_TagString: Untagged
@@ -812,6 +813,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &67125517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 67125514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fe1addf80047487395c85e92be5ea7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeOutTexture: {fileID: 2800000, guid: 5192e4d01634042649b381f895f230e2, type: 3}
+  fadeSpeed: 0.8
 --- !u!1001 &70334253
 Prefab:
   m_ObjectHideFlags: 0
