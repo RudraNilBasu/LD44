@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
@@ -18,6 +19,11 @@ public class GameManager : MonoBehaviour {
 
     Fading fading;
 
+    [SerializeField]
+    GameObject playerLeftUI, playerLeftText, foodUI, foodText, background;
+
+    Text player_text, food_text;
+
     public static bool PlayerDead;
 
     int totalLives;
@@ -33,6 +39,16 @@ public class GameManager : MonoBehaviour {
         fading = GetComponent<Fading>();
 
         GameManager.PlayerDead = false;
+
+        // Set all UI false
+        playerLeftUI.SetActive(false);
+        playerLeftText.SetActive(false);
+        foodUI.SetActive(false);
+        foodText.SetActive(false);
+        background.SetActive(false);
+
+        player_text = playerLeftText.GetComponent<Text>();
+        food_text = foodText.GetComponent<Text>();
 	}
 	
 	// Update is called once per frame
@@ -66,7 +82,22 @@ public class GameManager : MonoBehaviour {
             player_rb.isKinematic = true;
             player_rb.velocity = Vector3.zero;
             // go_player.SetActive(false);
+            
+            StartCoroutine(ShowUI());
         }
+    }
+
+    IEnumerator ShowUI()
+    {
+        yield return new WaitForSeconds(0.5f);
+        food_text.text = " x " + go_player.GetComponent<PlayerManager>().GetFoodCount().ToString();
+        // Set all UI true
+        playerLeftUI.SetActive(true);
+        playerLeftText.SetActive(true);
+        foodUI.SetActive(true);
+        foodText.SetActive(true);
+        background.SetActive(true);
+        fading.BeginFade(-1);
     }
 
     IEnumerator RespawnPlayer()

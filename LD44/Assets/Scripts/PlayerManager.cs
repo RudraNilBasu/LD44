@@ -72,6 +72,11 @@ public class PlayerManager : MonoBehaviour {
         }
     }
 
+    public int GetFoodCount()
+    {
+        return foodCollected;
+    }
+
     void OnCollisionEnter2D(Collision2D coll)
     {
         if (coll.gameObject.tag == "Enemy" && coll.collider.gameObject.name != "HEAD") {
