@@ -24,12 +24,15 @@ public class GameManager : MonoBehaviour {
 
     Text player_text, food_text;
 
+    int life_count;
+
     public static bool PlayerDead;
 
     int totalLives;
     // Use this for initialization
 	void Start () {
 		totalLives = 3;
+        life_count = 1;
         player_controller = go_player.GetComponent<PlayerController>();
         player_motor = go_player.GetComponent<PlayerMotor>();
         player_sprite = go_player.GetComponent<SpriteRenderer>();
@@ -59,6 +62,8 @@ public class GameManager : MonoBehaviour {
     public void DeathSequence(Transform currentPlayerPosition)
     {
         totalLives--;
+        life_count++;
+        player_text.text = " x " + life_count.ToString();
         if (totalLives >= 0) {
             Instantiate(go_zombie, currentPlayerPosition.position, Quaternion.identity);
 
@@ -74,17 +79,22 @@ public class GameManager : MonoBehaviour {
             StartCoroutine(RespawnPlayer());
             // TODO: UI: Show that a player died
         } else {
-            fading.BeginFade(1);
-            player_controller.enabled = false;
-            player_motor.enabled = false;
-            player_sprite.enabled = false;
-            player_collider.enabled = false;
-            player_rb.isKinematic = true;
-            player_rb.velocity = Vector3.zero;
-            // go_player.SetActive(false);
-            
-            StartCoroutine(ShowUI());
+            EndGame();
         }
+    }
+
+    public void EndGame()
+    {
+        fading.BeginFade(1);
+        player_controller.enabled = false;
+        player_motor.enabled = false;
+        player_sprite.enabled = false;
+        player_collider.enabled = false;
+        player_rb.isKinematic = true;
+        player_rb.velocity = Vector3.zero;
+        // go_player.SetActive(false);
+
+        StartCoroutine(ShowUI());
     }
 
     IEnumerator ShowUI()

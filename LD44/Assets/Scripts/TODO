@@ -15,9 +15,8 @@ background moon + stars
 player count
 food count
 tutorial jump + zz
-after death menu
 main menu
-spike after you fall too far
+spike after you fall too far (not spike just fade out)
 
 bug: Arrow has been destroy but still trying to access it
 
