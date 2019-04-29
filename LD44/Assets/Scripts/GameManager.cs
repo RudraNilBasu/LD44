@@ -58,7 +58,6 @@ public class GameManager : MonoBehaviour {
             StartCoroutine(RespawnPlayer());
             // TODO: UI: Show that a player died
         } else {
-            print("Game Over");
             fading.BeginFade(1);
             player_controller.enabled = false;
             player_motor.enabled = false;
