@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour {
     BoxCollider2D player_collider;
     Rigidbody2D player_rb;
 
+    Fading fading;
+
     public static bool PlayerDead;
 
     int totalLives;
@@ -27,6 +29,8 @@ public class GameManager : MonoBehaviour {
         player_sprite = go_player.GetComponent<SpriteRenderer>();
         player_collider = go_player.GetComponent<BoxCollider2D>();
         player_rb = go_player.GetComponent<Rigidbody2D>();
+
+        fading = GetComponent<Fading>();
 
         GameManager.PlayerDead = false;
 	}
@@ -55,13 +59,25 @@ public class GameManager : MonoBehaviour {
             // TODO: UI: Show that a player died
         } else {
             print("Game Over");
-            go_player.SetActive(false);
+            fading.BeginFade(1);
+            player_controller.enabled = false;
+            player_motor.enabled = false;
+            player_sprite.enabled = false;
+            player_collider.enabled = false;
+            player_rb.isKinematic = true;
+            player_rb.velocity = Vector3.zero;
+            // go_player.SetActive(false);
         }
     }
 
     IEnumerator RespawnPlayer()
     {
         yield return new WaitForSeconds(1.0f);
+
+        fading.BeginFade(1);
+
+        yield return new WaitForSeconds(1.0f);
+
         go_player.transform.position = startPos.position; // TODO: Some more animations and all that
         player_controller.enabled = true;
         player_motor.enabled = true;
@@ -71,6 +87,8 @@ public class GameManager : MonoBehaviour {
 
         GameManager.PlayerDead = false;
 
+        yield return new WaitForSeconds(0.2f);
+        fading.BeginFade(-1);
     }
 
     public void CollectFood()

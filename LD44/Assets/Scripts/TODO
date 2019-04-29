@@ -12,10 +12,10 @@ bug: reduce arrow alive time to 0.5f or something
 reduce climb ground size by a bit
 
 background moon + stars
-better death
 player count
 food count
 tutorial jump + zz
+black after final death
 
 bug: Arrow has been destroy but still trying to access it
 fix player image layering (getting hidden by torch and all that)
