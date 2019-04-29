@@ -2,23 +2,20 @@ fix bad movement
 animate sprite mask
 camera follow
 bug: arrow: NullPointerException when spawned arrow kills enemy before m_collider is disabled
-Find a way player can be killed / add enemies
-bug: Probably all zombies will spawn at the exact same spot one on top of the other
 IDEA: dead zombie's rotation = ! current zombie's rotation
-make space == jump
 
 [POLISH]: Camera fading and all that
 Decide if player can stand and do stuff on arrows or not.
 bug: Player on zombie's head bugs
 bug: jumping on zombie's head twice makes me die
-Disable player rotate when dead
 bug: reduce arrow alive time to 0.5f or something
 reduce climb ground size by a bit
 
-arrow asset
-all platform = my platform
-last level: make a way to spot zombie easily (glowing eyes, etc)
-background moon
+background moon + stars
+better death
+player count
+food count
+tutorial jump + zz
 
 bug: Arrow has been destroy but still trying to access it
 fix player image layering (getting hidden by torch and all that)
