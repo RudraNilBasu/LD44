@@ -15,10 +15,12 @@ Disable player rotate when dead
 bug: reduce arrow alive time to 0.5f or something
 reduce climb ground size by a bit
 
-zombie asset
 arrow asset
-background color
+all platform = my platform
+last level: make a way to spot zombie easily (glowing eyes, etc)
+background moon
 
 bug: Arrow has been destroy but still trying to access it
+fix player image layering (getting hidden by torch and all that)
 
 check if this works: https://github.com/Brackeys/2D-Character-Controller/blob/master/CharacterController2D.cs
