@@ -14,3 +14,11 @@ bug: jumping on zombie's head twice makes me die
 Disable player rotate when dead
 bug: reduce arrow alive time to 0.5f or something
 reduce climb ground size by a bit
+
+zombie asset
+arrow asset
+background color
+
+bug: Arrow has been destroy but still trying to access it
+
+check if this works: https://github.com/Brackeys/2D-Character-Controller/blob/master/CharacterController2D.cs
