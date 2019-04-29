@@ -4,7 +4,6 @@ camera follow
 bug: arrow: NullPointerException when spawned arrow kills enemy before m_collider is disabled
 IDEA: dead zombie's rotation = ! current zombie's rotation
 
-[POLISH]: Camera fading and all that
 Decide if player can stand and do stuff on arrows or not.
 bug: Player on zombie's head bugs
 bug: jumping on zombie's head twice makes me die
@@ -12,8 +11,6 @@ bug: reduce arrow alive time to 0.5f or something
 reduce climb ground size by a bit
 
 background moon + stars
-player count
-food count
 tutorial jump + zz
 main menu
 spike after you fall too far (not spike just fade out)

@@ -36,6 +36,10 @@ public class PlayerManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (!GameManager.PlayerDead) {
+            if (transform.position.y <= -11.0f) {
+                GM.SendMessage("DeathSequence", transform);
+            }
+
             if (Input.GetAxisRaw("Horizontal") == 1) {
                 // player should look right
                 transform.localScale = new Vector3(

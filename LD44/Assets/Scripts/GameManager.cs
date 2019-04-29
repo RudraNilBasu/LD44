@@ -65,7 +65,9 @@ public class GameManager : MonoBehaviour {
         life_count++;
         player_text.text = " x " + life_count.ToString();
         if (totalLives >= 0) {
-            Instantiate(go_zombie, currentPlayerPosition.position, Quaternion.identity);
+            if (go_player.transform.position.y > -10.0f) {
+                Instantiate(go_zombie, currentPlayerPosition.position, Quaternion.identity);
+            }
 
             GameManager.PlayerDead = true;
 
@@ -85,7 +87,14 @@ public class GameManager : MonoBehaviour {
 
     public void EndGame()
     {
+        GameManager.PlayerDead = true;
         fading.BeginFade(1);
+        StartCoroutine(ShowUI());
+    }
+
+    IEnumerator ShowUI()
+    {
+        yield return new WaitForSeconds(0.5f);
         player_controller.enabled = false;
         player_motor.enabled = false;
         player_sprite.enabled = false;
@@ -94,11 +103,6 @@ public class GameManager : MonoBehaviour {
         player_rb.velocity = Vector3.zero;
         // go_player.SetActive(false);
 
-        StartCoroutine(ShowUI());
-    }
-
-    IEnumerator ShowUI()
-    {
         yield return new WaitForSeconds(0.5f);
         food_text.text = " x " + go_player.GetComponent<PlayerManager>().GetFoodCount().ToString();
         // Set all UI true
