@@ -11,7 +11,7 @@ public class PlayerManager : MonoBehaviour {
     GameObject GM;
 
     // PlayerController m_controller;
-    // PlayerMotor m_motor;
+    PlayerMotor m_motor;
 
     Rigidbody2D rb;
 
@@ -27,7 +27,7 @@ public class PlayerManager : MonoBehaviour {
         rb = gameObject.GetComponent<Rigidbody2D>();
 
         // m_controller = GetComponent<PlayerController>();
-        // m_motor = GetComponent<PlayerMotor>();
+        m_motor = GetComponent<PlayerMotor>();
 
         // m_motor.enabled = true;
         // m_controller.enabled = true;
@@ -59,10 +59,12 @@ public class PlayerManager : MonoBehaviour {
         }
 	}
 
+    // TODO: This part of code is probably not getting called at all
+    // instead OnCollisionEnter2D is. Check
     void OnTriggerStay2D(Collider2D coll)
     {
         print("Here: " + coll.gameObject.name);
-        if (coll.gameObject.name == "HEAD") {
+        if (coll.gameObject.name == "HEAD" && m_motor.CheckGrounded()) {
             transform.parent = coll.transform;
         }
     }
@@ -92,7 +94,7 @@ public class PlayerManager : MonoBehaviour {
             GM.SendMessage("DeathSequence", transform);
         }
 
-        if (coll.collider.gameObject.name == "HEAD") {
+        if (coll.collider.gameObject.name == "HEAD" && m_motor.CheckGrounded()) {
             transform.parent = coll.collider.transform;
             // rb.simulated = false;
             rb.bodyType = RigidbodyType2D.Kinematic; // TODO: unset this on button press

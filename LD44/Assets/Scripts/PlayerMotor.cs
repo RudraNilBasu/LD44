@@ -63,6 +63,10 @@ public class PlayerMotor : MonoBehaviour
         }
     }
 
+    public bool CheckGrounded()
+    {
+        return isGrounded;
+    }
     /*
     void OnCollisionEnter2D(Collision2D coll)
     {

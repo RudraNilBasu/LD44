@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
@@ -112,6 +113,9 @@ public class GameManager : MonoBehaviour {
         foodText.SetActive(true);
         background.SetActive(true);
         fading.BeginFade(-1);
+
+        yield return new WaitForSeconds(2.0f);
+        SceneManager.LoadScene("Menu");
     }
 
     IEnumerator RespawnPlayer()
