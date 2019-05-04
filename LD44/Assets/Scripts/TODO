@@ -1,16 +1,22 @@
+better camera
+level fixes
+collision bugs
+
 fix bad movement
 animate sprite mask
-camera follow
 bug: arrow: NullPointerException when spawned arrow kills enemy before m_collider is disabled
-IDEA: dead zombie's rotation = ! current zombie's rotation
+IDEA: dead player's zombie's rotation = opposite of current zombie's rotation
 
-bug: Player on zombie's head bugs
 bug: jumping on zombie's head twice makes me die
 bug: reduce arrow alive time to 0.5f or something
 reduce climb ground size by a bit
 
 background moon + stars
+parallax background
 
 bug: Arrow has been destroy but still trying to access it
 
 check if this works: https://github.com/Brackeys/2D-Character-Controller/blob/master/CharacterController2D.cs
+
+move to main menu from game
+webgl: remove the stupid mobile checks and probably it will work [YES IT DOES]

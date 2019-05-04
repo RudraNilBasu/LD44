@@ -27,6 +27,12 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         float speedX = 0.0f;
+        // these were necessary for webgl build
+        // speedX = Input.GetAxisRaw("Horizontal") * moveSpeed;// * Time.deltaTime;
+        // if (Input.GetKeyDown(KeyCode.Space))
+        // {
+            // motor.jump(jumpSpeed);
+        // }
 #if UNITY_STANDALONE || UNITY_WEBPLAYER
         speedX = Input.GetAxisRaw("Horizontal") * moveSpeed;// * Time.deltaTime;
 #elif UNITY_IOS || UNITY_ANDROID || UNITY_WP8 || UNITY_IPHONE
